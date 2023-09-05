@@ -1,66 +1,52 @@
-# TO_DO:
+# CSV to Database (csv2db)
 
-- Update README explaining proper usage
-- BUG: All tables are created with TEXT datatype for all coulmns, the tables need to have the correct datatype for INT and REAL
-- Make GUI
-   - instead of folder for data, have the user browse (button) for or drag and drop a folder containing csv files for the database.
-   - A tkinter button to click to update the database. 
-   - A text input for what they would like to name thier database.
+## Introduction
 
-# Database Tooling for Managing SQLite Databases
-
-This set of Python scripts and tools allows you to create and manage SQLite databases for storing and manipulating data from CSV files. It is designed to help you easily import data from CSV files into SQLite tables and set up the database schema. 
+`csv2db`, is a simple Python tool that allows you to create a database from CSV files. This README.md provides step-by-step instructions on how to use `csv2db` to efficiently convert your CSV data into a SQLite database.
 
 ## Prerequisites
 
-Before using these tools, ensure that you have Python installed on your system. You'll also need to have the required CSV files that you want to import into the database.
+Before using these tools, ensure that you have the following prerequisites installed on your system:
+
+- Python: You need Python installed to run the script.
+- CSV Files: You should have the CSV files that you want to import into the database ready.
 
 ## Getting Started
 
-1. **Clone the Repository**: Start by cloning this repository to your local machine or download the provided scripts.
+To begin using `csv2db`, follow these steps:
 
-2. **Modify Script Variables**:
-   - Open the `main.py` script and update the paths and variables according to your specific use case:
-     - `create_tables_script`: Set the path to your `createTables.py` script.
-     - `import_data_script`: Set the path to your `importData.py` script.
-   
-   - Open the `createTables.py` script and define the database schema for your tables.
-   - Update the CSV file names and paths in the `importData.py` script to match your data files.
+1. Open a Terminal or Command Prompt and navigate to where you want to clone this repository
 
-3. **Run the Main Script**:
-   - Execute the `main.py` script using the following command:
-     ```bash
-     python main.py
-     ```
-   - The script will first create the tables based on the schema defined in `createTables.py`.
-   - It will then import data from your CSV files into the respective tables.
-   - If any errors occur during these processes, they will be displayed in the console.
+2. Clone this repository to your local machine using the following command:
 
-4. **Database Management**:
-   - You can further customize the database schema and scripts to meet your specific needs.
-   - The provided scripts handle resetting ID sequences and deleting existing data, so be cautious when using them on production databases.
+    ```bash
+    git clone https://git.happytavern.co/oceanslim/csv2db.git
+    ```
+   or
+    ```bash
+    git clone https://github.com/0ceanslim/csv2db.git
+    ```
 
-## Database Structure
+3. Place the CSV file(s) you want to convert into a database in the `data` folder within the project directory.  
+*(there are some example CSV files already in this project. Remove them after adding your own)*
 
-The database created by these scripts contains two tables: `reloading` and `ammo`. The schema for these tables can be customized in the `createTables.py` script.
+## Configuration (Optional)
 
-## Customization
+If you want to customize the starting IDs for your table data entries, you can modify the `id.py` file before running the conversion. This step is entirely optional and can be skipped if you want to use the default IDs.
 
-You can customize the following aspects of this tooling:
+## Usage
 
-- Database schema in `createTables.py`.
-- CSV file names and paths in `importData.py`.
-- Starting ID values for each table.
-- CSV data loading logic in `load_csv_data` function.
+1. Open your terminal or command prompt.
 
-## Troubleshooting
+2. Navigate to the project directory where you cloned the repository.
 
-If you encounter any issues or errors while using this tooling, please refer to the error messages displayed in the console for guidance.
+3. Run the `main.py` script to initiate the CSV to database conversion process:
 
-## License
+    ```bash
+    python main.py
+    ```
 
-This project is licensed under the MIT License. Feel free to modify and distribute it as needed for your projects.
+4. `csv2db` will process the CSV file(s) and create a corresponding SQLite database in the same directory as the project.
 
----
-
-Happy database management!
+## Feedback and Contributions
+I welcome feedback, bug reports, and contributions. Feel free to open an issue or submit a pull request on my GitHub or HappyTavern repository if you have any suggestions or improvements.
