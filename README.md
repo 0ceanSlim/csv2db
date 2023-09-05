@@ -1,3 +1,12 @@
+# TO_DO:
+
+- Update README explaining proper usage
+- BUG: All tables are created with TEXT datatype for all coulmns, the tables need to have the correct datatype for INT and REAL
+- Make GUI
+   - instead of folder for data, have the user browse (button) for or drag and drop a folder containing csv files for the database.
+   - A tkinter button to click to update the database. 
+   - A text input for what they would like to name thier database.
+
 # Database Tooling for Managing SQLite Databases
 
 This set of Python scripts and tools allows you to create and manage SQLite databases for storing and manipulating data from CSV files. It is designed to help you easily import data from CSV files into SQLite tables and set up the database schema. 
