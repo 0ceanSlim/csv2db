@@ -4,15 +4,11 @@ import sqlite3
 from id import starting_ids
 
 # Connect to the SQLite database
-conn = sqlite3.connect("items.db")
+conn = sqlite3.connect("database.db")
 cursor = conn.cursor()
 
 # Define the directory where the CSV files are located
 csv_directory = "data"  # Change this to your directory path
-
-# Define the starting IDs for each table type
-# starting_ids = {"reloading": 20000, "ammo": 10000, "craft": 30000}
-
 
 # Function to load data from a CSV file into a table
 def load_csv_data(csv_path, table_name, cursor, starting_id):
