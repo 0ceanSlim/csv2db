@@ -6,6 +6,7 @@ import subprocess
 create_tables_script = "createTables.py"
 import_data_script = "importData.py"
 
+
 def create_database():
     """Creates the database based on the user input."""
     database_name = database_name_entry.get()
@@ -30,11 +31,13 @@ def create_database():
 
     # Show a messagebox to inform the user that the database has been created
     tk.messagebox.showinfo("Success", "Database created successfully.")
-    
+
+
 def browse_directory(entry_field):
     """Opens a file dialog and allows the user to select a directory."""
     directory = filedialog.askdirectory()
     entry_field.insert(0, directory)
+
 
 # Create the main window
 window = tk.Tk()
@@ -47,7 +50,9 @@ database_name_entry = tk.Entry(width=50)
 # Create the data directory label and entry field
 data_directory_label = tk.Label(text="Data directory:")
 data_directory_entry = tk.Entry(width=50)
-data_directory_button = tk.Button(text="Browse", command=lambda: browse_directory(data_directory_entry))
+data_directory_button = tk.Button(
+    text="Browse", command=lambda: browse_directory(data_directory_entry)
+)
 
 # Create the table starting IDs label and entry field
 table_starting_ids_label = tk.Label(text="Table starting IDs (optional):")
@@ -70,11 +75,7 @@ table_starting_ids_entry.grid(row=2, column=1)
 create_database_button.grid(row=3, column=0)
 
 # Bind the enter key to the create database button
-#window.bind("<Return>", create_database)
+# window.bind("<Return>", create_database)
 
 # Run the mainloop
 window.mainloop()
-
-
-
-
