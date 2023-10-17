@@ -32,7 +32,7 @@ To begin using `csv2db`, follow these steps:
 
 ## Configuration (Optional)
 
-If you want to customize the starting IDs for your table data entries, you can modify the `id.py` file before running the conversion. This step is entirely optional and can be skipped if you want to use the default IDs.
+If you want to customize the starting IDs (Primary Keys) for your table data entries, you can modify the `starting_ids` at the beginning of the `update.py` script before running the conversion. This step is entirely optional and can be skipped if you want to use the default IDs.
 
 ## Usage
 
@@ -40,10 +40,10 @@ If you want to customize the starting IDs for your table data entries, you can m
 
 2. Navigate to the project directory where you cloned the repository.
 
-3. Run the `main.py` script to initiate the CSV to database conversion process:
+3. Run the `update.py` script to initiate the CSV to database conversion process:
 
     ```bash
-    python main.py
+    python update.py
     ```
 
 4. `csv2db` will process the CSV file(s) and create a corresponding SQLite database in the same directory as the project.
